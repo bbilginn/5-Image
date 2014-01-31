@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,8 +16,11 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
+    <script src="app/BaseController.js"></script>
 </head>
-<body>
+<body ng-controller="BaseController">
 
 
     <div class="container">
@@ -35,20 +38,10 @@
             </div>
 
 
-            <div class="col-lg-2">
-                <img src="img/_thumb/1.jpg" alt="1" class="img-circle" style="height: 100px; width: 100px; " />
-            </div>
-            <div class="col-lg-2">
-                <img src="img/_thumb/2.jpg" alt="1" class="img-circle" style="height: 100px; width: 100px; " />
-            </div>
-            <div class="col-lg-2">
-                <img src="img/_thumb/3.jpg" alt="1" class="img-circle" style="height: 100px; width: 100px; " />
-            </div>
-            <div class="col-lg-2">
-                <img src="img/_thumb/4.jpg" alt="1" class="img-circle" style="height: 100px; width: 100px; " />
-            </div>
-            <div class="col-lg-2">
-                <img src="img/_thumb/5.jpg" alt="1" class="img-circle" style="height: 100px; width: 100px; " />
+            <div class="col-lg-2" ng-repeat="item in ImageList">
+                <a href="#" ng-click="ChangeImage">
+                    <img ng-src="{{item.ThumbImageUrl}}" alt="{{item.Name}}" class="img-circle" />
+                </a>
             </div>
 
 
