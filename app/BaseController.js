@@ -13,7 +13,7 @@
     $scope.CurrentImage = $scope.ImageList[0];
 
     // Küçük resim tıklandığında değiştirmekle yükümlü event.
-    $scope.ChangeImage = function () {
-
+    $scope.ChangeImage = function (CurrentImage) {
+        $scope.CurrentImage = CurrentImage;
     }
 }
